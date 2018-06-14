@@ -1,0 +1,27 @@
+{
+  "name": "vows",
+  "version": "0.0.1",
+  "description": "Util functions for dealing with iterators of promises",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Gorm Casper",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-async-generator-functions"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-jest": "^23.0.1",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0"
+  }
+}
