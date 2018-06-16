@@ -8,20 +8,20 @@ function toEqual(actual, expected) {
 
 test("Simple array", () => {
     const input = [1, 2, 3, 4, 5]
-    const actual = take(input, 2)
+    const actual = take(2)(input)
     const expected = [1, 2]
     toEqual(actual, expected)
 })
 
 test("Count higher than input", () => {
     const input = [1, 2, 3, 4, 5]
-    const actual = take(input, 20)
+    const actual = take(20)(input)
     toEqual(actual, input)
 })
 
 test("Negative count", () => {
     const input = [1, 2, 3, 4, 5]
-    const actual = take(input, -3)
+    const actual = take(-3)(input)
     toEqual(actual, [])
 })
 

@@ -1,6 +1,6 @@
-export default async function toArray(items) {
+export default async function toArray(reader) {
     const out = []
-    for await (const x of items) {
+    for await (const x of reader) {
         out.push(x)
     }
     return out

@@ -1,6 +1,6 @@
-export default async function last(items) {
+export default () => async function last(reader) {
     let item
-    for await (const x of items) {
+    for await (const x of reader) {
         item = x
     }
     return item

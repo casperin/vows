@@ -1,4 +1,4 @@
-import {scan, toArray} from "../es"
+import {cycle, take, toArray} from "../es"
 
 function toEqual(actual, expected) {
     toArray(actual)
@@ -8,8 +8,7 @@ function toEqual(actual, expected) {
 
 test("Simple array", () => {
     const input = [1, 2, 3]
-    const add = (x, y) => x + y
-    const actual = scan(10, add)(input)
-    const expected = [11, 13, 16]
+    const actual = take(10)(cycle()(input))
+    const expected = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1]
     toEqual(actual, expected)
 })

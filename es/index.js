@@ -1,38 +1,37 @@
-export { default as toArray } from './toArray';
-export { default as map } from './map';
-export { default as filter } from './filter';
-export { default as take } from './take';
-export { default as scan } from './scan';
-export { default as count } from './count';
-export { default as last } from './last';
-export { default as nth } from './nth';
-export { default as chain } from './chain';
-export { default as enumerate } from './enumerate';
-export { default as zip } from './zip';
-
-/*
- * stepBy n (gives you every n items)
- * forEach (like tap or inspect?)
- * filterMap (truthy? or straight up null?)
- * skip / drop n
- * skipWhile / dropWhile / dropUntil fn
- * takeWhile fn
- * flatMap
- * flatten
- * partition fn (can this be done?)
- * reduce
- * all fn -> bool
- * any fn -> bool
- * find fn -> item
- * position fn -> number
- * max
- * min
- * maxByKey fn(x)
- * maxBy fn(x, y)
- * minByKey fn(x)
- * minBy fn(x, y)
- * unzip (takes [[1,2], [3,4]] returns two Ps)
- * cycle it (starts over again when done)
- * sum
- * product
- */
+export { default as all } from './all.js'
+export { default as any } from './any.js'
+export { default as chain } from './chain.js'
+export { default as copy } from './copy.js'
+export { default as count } from './count.js'
+export { default as cycle } from './cycle.js'
+export { default as drop } from './drop.js'
+export { default as dropWhile } from './dropWhile.js'
+export { default as enumerate } from './enumerate.js'
+export { default as filter } from './filter.js'
+export { default as filterMap } from './filterMap.js'
+export { default as find } from './find.js'
+export { default as flatMap } from './flatMap.js'
+export { default as flatten } from './flatten.js'
+export { default as fold } from './fold.js'
+export { default as forEach } from './forEach.js'
+export { default as inspect } from './inspect.js'
+export { default as last } from './last.js'
+export { default as map } from './map.js'
+export { default as max } from './max.js'
+export { default as maxByKey } from './maxByKey.js'
+export { default as min } from './min.js'
+export { default as minByKey } from './minByKey.js'
+export { default as nth } from './nth.js'
+export { default as position } from './position.js'
+export { default as product } from './product.js'
+export { default as run } from './run.js'
+export { default as scan } from './scan.js'
+export { default as stepBy } from './stepBy.js'
+export { default as sum } from './sum.js'
+export { default as take } from './take.js'
+export { default as takeWhile } from './takeWhile.js'
+export { default as throttle } from './throttle.js'
+export { default as toArray } from './toArray.js'
+export { default as unique } from './unique.js'
+export { default as zip } from './zip.js'
+export { default as pipe } from './pipe.js'

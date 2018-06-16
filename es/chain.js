@@ -1,5 +1,5 @@
-export default async function* chain(...iterators) {
-    for (const items of iterators) {
+export default async function* chain(...readers) {
+    for (const items of readers) {
         for await (const x of items) {
             yield x
         }

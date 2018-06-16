@@ -1,11 +1,11 @@
-export default async function* take(items, count) {
-    if (count <= 0) {
+export default n => async function* take(reader) {
+    if (n <= 0) {
         return
     }
-    for await (const x of items) {
+    for await (const x of reader) {
         yield x
-        count--
-        if (count <= 0) {
+        n--
+        if (n <= 0) {
             return
         }
     }

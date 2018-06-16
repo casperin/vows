@@ -2,8 +2,8 @@ export default async function* zip(...iterators) {
     iterators = iterators.map(its => its[Symbol.iterator]())
 
     while (true) {
-        const items = iterators.map(items => Promise.resolve(items.next()))
-        const results = await Promise.all(items)
+        const readers = iterators.map(reader => Promise.resolve(reader.next()))
+        const results = await Promise.all(readers)
         const out = []
 
         for (const result of results) {

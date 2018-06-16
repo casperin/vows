@@ -8,7 +8,7 @@ function toEqual(actual, expected) {
 
 test("Simple array", () => {
     const input = [1, 2, 3]
-    const actual = map(input, x => x + 1)
+    const actual = map(x => x + 1)(input)
     const expected = [2, 3, 4]
     toEqual(actual, expected)
 })
@@ -19,7 +19,7 @@ test("Array of promises", () => {
         new Promise(res => setTimeout(res, 1, 2)),
         Promise.resolve(3),
     ]
-    const actual = map(input, x => x + 1)
+    const actual = map(x => x + 1)(input)
     const expected = [2, 3, 4]
     toEqual(actual, expected)
 })

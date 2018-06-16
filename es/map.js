@@ -1,5 +1,5 @@
-export default async function* map(items, fn) {
-    for await (const x of items) {
+export default fn => async function* map(reader) {
+    for await (const x of reader) {
         yield fn(x)
     }
 }
