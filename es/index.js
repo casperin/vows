@@ -1,6 +1,7 @@
 export { default as all } from './all.js'
 export { default as any } from './any.js'
 export { default as chain } from './chain.js'
+export { default as controls } from './controls.js'
 export { default as copy } from './copy.js'
 export { default as count } from './count.js'
 export { default as cycle } from './cycle.js'
