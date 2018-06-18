@@ -1,22 +1,22 @@
 import {copy, toArray} from "../es"
 
 test("Simple events", (done) => {
-    const {reader, writer} = copy()
+    const {read, write} = copy()
     const actual = []
     const expected = [1, 2, 3]
 
     ;(async function() {
-        for await (const x of reader()) {
+        for await (const x of read()) {
             actual.push(x)
         }
     })()
 
     Promise.resolve()
-        .then(() => writer(1))
+        .then(() => write(1))
         .then(delay(100))
-        .then(() => writer(2))
+        .then(() => write(2))
         .then(delay(100))
-        .then(() => writer(3))
+        .then(() => write(3))
 
     return Promise.resolve()
         .then(delay(300))
@@ -25,28 +25,28 @@ test("Simple events", (done) => {
 })
 
 test("Multiple readers", (done) => {
-    const {reader, writer} = copy()
+    const {read, write} = copy()
     const actual1 = []
     let actual2 = ""
 
     ;(async function() {
-        for await (const x of reader()) {
+        for await (const x of read()) {
             actual1.push(x)
         }
     })()
 
     ;(async function() {
-        for await (const x of reader()) {
+        for await (const x of read()) {
             actual2 += x + "_"
         }
     })()
 
     Promise.resolve()
-        .then(() => writer(1))
+        .then(() => write(1))
         .then(delay(100))
-        .then(() => writer(2))
+        .then(() => write(2))
         .then(delay(100))
-        .then(() => writer(3))
+        .then(() => write(3))
 
     return Promise.resolve()
         .then(delay(300))
