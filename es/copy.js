@@ -9,11 +9,12 @@ export default function copy() {
         resolves.length = 0 // clear array
     }
 
-    function* reader() {
+    async function* reader() {
         while(true) {
-            yield new Promise(function(resolve) {
+            const value = await new Promise(function(resolve) {
                 resolves.push(resolve)
             })
+            yield value
         }
     }
 
